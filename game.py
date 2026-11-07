@@ -34,11 +34,11 @@ class HangmanGame:
     def remaining_attempts(self):
         return self.max_errors - self.errors
 
-    def is_won(self)
+    def is_won(self):
         for caracter in self.word:
-            if caracter not in self.guessed_letters:
+            if caracter.isalpha() and caracter not in self.guessed_letters:
                 return False
-        return true 
+        return True 
 
     def is_lose(self):
         return self.errors == 6

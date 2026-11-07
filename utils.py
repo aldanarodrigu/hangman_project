@@ -2,6 +2,11 @@
 
 import random
 
+import os
+
+def clear_screen():
+    os.system("cls" if os.name == "nt" else "clear")
+
 def get_random_word():
     """
     Leer todas las lineas de wordlist.txt y devolver una al azar
@@ -12,6 +17,3 @@ def get_random_word():
     words = [word.strip().lower() for word in words if word.strip()]
     
     return random.choice(words)
-
-
-print(get_random_word())
