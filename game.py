@@ -1,5 +1,5 @@
 # Contiene la clase HangmanGame con el estado y la lógica del juego.
-#  esta clase no habla con el jugador, solo decide
+# Esta clase no habla con el jugador, solo decide
 
 class HangmanGame:
     def __init__(self, word):
@@ -18,14 +18,17 @@ class HangmanGame:
                 progress += ""
         return progress
 
-def process_guess(self, letter):
-    if letter in self.guessed_letters:
-        return False
+    def process_guess(self, letter):
+        if letter in self.guessed_letters:
+            return False
 
-    self.guessed_letters.append(letter)
+        self.guessed_letters.append(letter)
 
-    if letter not in self.word:
-        self.errors += 1
-        return False
+        if letter not in self.word:
+            self.errors += 1
+            return False
 
-    return True
+        return True
+
+    def remaining_attempts(self):
+        return self.max_errors - self.errors
