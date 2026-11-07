@@ -17,3 +17,15 @@ class HangmanGame:
             else:
                 progress += ""
         return progress
+
+def process_guess(self, letter):
+    if letter in self.guessed_letters:
+        return False
+
+    self.guessed_letters.append(letter)
+
+    if letter not in self.word:
+        self.errors += 1
+        return False
+
+    return True
