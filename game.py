@@ -12,11 +12,12 @@ class HangmanGame:
         progress = ""
 
         for letter in self.word:
-            if letter in  self.guessedletters:
-                progress += letter 
+            if not letter.isalpha() or letter in self.guessed_letters:
+                progress += letter + " "
             else:
-                progress += ""
-        return progress
+                progress += "_ "
+
+        return progress.strip()
 
     def process_guess(self, letter):
         if letter in self.guessed_letters:
